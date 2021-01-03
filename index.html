@@ -3,56 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
     <title>Controle de despesas</title>
   </head>
   <body>
-    <h2>Controle de despesas</h2>
-
-    <div class="container">
-      <h4>Saldo atual</h4>
-      
-      <h1 id="balance" class="balance">R$ 0.00</h1>
-
-      <div class="inc-exp-container">
-        <div>
-          <h4>Receitas</h4>
-          <p id="money-plus" class="money plus">+ R$0.00</p>
+    <main>
+      <h1>Controle de despesas</h1>
+      <div id="container" class="container">
+        <h4 class="tittle">Saldo atual</h4>
+        <img id="modal" class="button-new-transaction" src="./assets/icons/plus-circle.svg" alt="Adicionar transação">
+        <h2 class="tittle" id="balance">R$ 0.00</h2>
+        <div class="income-expense-container">
+          <div>
+            <p id="money-plus" class="money plus"><i class="icon-container"></i>+ R$0.00</p>
+          </div>
+          <div>
+            <p id="money-minus" class="money minus">- R$0.00</p>
+          </div>
         </div>
-
-        <div>
-          <h4>Despesas</h4>
-          <p id="money-minus" class="money minus">- R$0.00</p>
-        </div>
+        <h3 class="tittle">Transações</h3>
+        <ul id="transactions" class="transactions"></ul>
+        <form id="form" class="modal-new-transaction modal">
+          <div class="header-form">
+            <h3 class="tittle">Nova Despesa</h3>
+            <img id="closeModal" class="close-transaction" src="./assets/icons/x.svg" alt="Fechar">
+          </div>
+          <div class="form-control">
+            <input autofocus type="text" id="text" placeholder="Nome da transação" />
+          </div>
+          <div class="form-control">
+            <input type="number" id="amount" placeholder="Valor da transação" />
+          </div>
+          <button class="button">Adicionar</button>
+        </form>
       </div>
-
-      <h3>Transações</h3>
-      
-      <ul id="transactions" class="transactions">
-        <!-- <li class="minus">
-          Salário <span>-$400</span><button class="delete-btn">x</button>
-        </li> -->
-      </ul>
-
-      <h3>Adicionar transação</h3>
-      
-      <form id="form">
-        <div class="form-control">
-          <label for="text">Nome</label>
-          <input autofocus type="text" id="text" placeholder="Nome da transação" />
-        </div>
-
-        <div class="form-control">
-          <label for="amount">Valor <br />
-            <small>(negativo - despesas, positivo - receitas)</small>
-          </label>
-          <input type="number" id="amount" placeholder="Valor da transação" />
-        </div>
-
-        <button class="btn">Adicionar</button>
-      </form>
     </div>
-
-    <script src="script.js"></script>
+    </main>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
